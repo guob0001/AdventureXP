@@ -9,6 +9,7 @@ public class ActivityTest {
 
     /**
      * @author Joachim
+     * @author Christian
      */
 
     @Test
