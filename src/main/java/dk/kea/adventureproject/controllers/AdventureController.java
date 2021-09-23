@@ -1,16 +1,22 @@
 package dk.kea.adventureproject.controllers;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
  * @author Julius Panduro
  */
-@RestController
+@Controller
 public class AdventureController {
 
-    @GetMapping("/hej")
+    @GetMapping("/index")
     public String hello(){
-        return "Hello world";
+        return "index.html";
+    }
+
+    @GetMapping("/activityOverview")
+    public String hello2(){
+        return "activityOverview.html";
     }
 }
