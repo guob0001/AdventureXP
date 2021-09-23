@@ -1,6 +1,7 @@
 package dk.kea.adventureproject.repositories;
 
 
+import dk.kea.adventureproject.models.Activity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -23,12 +24,11 @@ import java.util.List;
 
 @Repository
 public class ActivityRepository {
+
     @Autowired
     JdbcTemplate template;
 
-
     //TODO Change tmp With the right tablename for the database.
-
 
     public void createNewActivity(Activity activity) {
         String sql = "INSERT INTO tmp (activityID,activityName,minimumAge,minimumHeight,isWithAdult) VALUES(?,?,?,?,?)";
@@ -38,9 +38,8 @@ public class ActivityRepository {
                 activity.getMinimumAge(),
                 activity.getMinimumHeight(),
                 activity.getIsWithAdult());
-            /*
-            int activityID, String activityName, int minimumAge, int minimumHeight, boolean isWithAdult
-             */
+
+            //int activityID, String activityName, int minimumAge, int minimumHeight, boolean isWithAdult
     }
 
     public List<Activity> readAllActivities(){
@@ -62,7 +61,5 @@ public class ActivityRepository {
         String sql = "DELETE tmp WHERE activityID = ?";
         template.update(sql, activity.getActivityID());
     }
-
-
-
 }
+
