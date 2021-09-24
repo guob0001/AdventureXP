@@ -9,21 +9,30 @@ public class Activity {
 
     private int activityID;
     private String activityName;
-    private boolean isWithParents;
+    private boolean isWithAdult;
     private int ageLimit;
+    private int heightLimit;
     private LocalDateTime fromDate;
     private LocalDateTime toDate;
     private double timeLimit;
 
-    public Activity(int activityID, String activityName, boolean isWithParents, int ageLimit,
+    public Activity(int activityID, String activityName, boolean isWithAdult, int ageLimit, int heightLimit,
                     LocalDateTime fromDate, LocalDateTime toDate, double timeLimit) {
         this.activityID = activityID;
         this.activityName = activityName;
-        this.isWithParents = isWithParents;
+        this.isWithAdult = isWithAdult;
         this.ageLimit = ageLimit;
         this.fromDate = fromDate;
         this.toDate = toDate;
         this.timeLimit = timeLimit;
+    }
+
+    public int getHeightLimit() {
+        return heightLimit;
+    }
+
+    public void setHeightLimit(int heightLimit) {
+        this.heightLimit = heightLimit;
     }
 
     public int getActivityID() {
@@ -42,12 +51,12 @@ public class Activity {
         this.activityName = activityName;
     }
 
-    public boolean isWithParents() {
-        return isWithParents;
+    public boolean isWithAdult() {
+        return isWithAdult;
     }
 
-    public void setWithParents(boolean withParents) {
-        isWithParents = withParents;
+    public void setWithAdult(boolean withAdult) {
+        isWithAdult = withAdult;
     }
 
     public int getAgeLimit() {
