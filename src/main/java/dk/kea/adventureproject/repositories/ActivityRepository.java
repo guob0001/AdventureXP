@@ -31,34 +31,35 @@ public class ActivityRepository {
     //TODO Change tmp With the right tablename for the database.
 
     public void createNewActivity(Activity activity) {
-        String sql = "INSERT INTO tmp (activityID,activityName,minimumAge,minimumHeight,isWithAdult) VALUES(?,?,?,?,?)";
+        String sql = "INSERT INTO activities (activityID,activityName,ageLimit,heightLimit,isWithAdult) VALUES(?,?,?,?,?)";
         template.update(sql,
                 activity.getActivityID(),
                 activity.getActivityName(),
-                activity.getMinimumAge(),
-                activity.getMinimumHeight(),
-                activity.getIsWithAdult());
+                activity.getAgeLimit(),
+                activity.getHeightLimit(),
+                activity.isWithAdult());
 
-            //int activityID, String activityName, int minimumAge, int minimumHeight, boolean isWithAdult
+            //int activityID, String activityName, int ageLimit, int minimumHeight, boolean isWithAdult
     }
 
     public List<Activity> readAllActivities(){
-        String sql = "SELECT * FROM tmp";
+        String sql = "SELECT * FROM activities";
         RowMapper<Activity> activityRowMapper = new BeanPropertyRowMapper<Activity>(Activity.class);
         return template.query(sql,activityRowMapper);
     }
 
     public void updateActivity(Activity activity){
-    String sql = "UPDATE tmp SET activityName = ?,minimumAge = ?,minimumHeight = ?,isWithAdult = ?";
+    String sql = "UPDATE activities SET activityName = ?,minimumAge = ?,minimumHeight = ?,isWithAdult = ?";
     template.update(sql,
             activity.getActivityName(),
-            activity.getMinimumAge(),
-            activity.getMinimumHeight(),
-            activity.getIsWithAdult());
+            activity.getActivityName(),
+            activity.getAgeLimit(),
+            activity.getHeightLimit(),
+            activity.isWithAdult());
     }
 
     public void deleteActivity(Activity activity){
-        String sql = "DELETE tmp WHERE activityID = ?";
+        String sql = "DELETE activities WHERE activityID = ?";
         template.update(sql, activity.getActivityID());
     }
 }

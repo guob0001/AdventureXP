@@ -20,12 +20,13 @@ public class ActivityTest {
         LocalDateTime fromDate = LocalDateTime.of(2021, 9, 24, 19, 30);
         LocalDateTime toDate = LocalDateTime.of(2021, 9, 24, 20, 30);
 
-        Activity activity = new Activity(1, "Sumo", false, 18, fromDate, toDate, 100);
+        Activity activity = new Activity(1, "Sumo", false, 18,150, fromDate, toDate, 100);
 
         assertEquals(18, activity.getAgeLimit());
+        assertEquals(150, activity.getHeightLimit());
         assertEquals(1, activity.getActivityID());
         assertEquals("Sumo", activity.getActivityName());
-        assertEquals(false, activity.isWithParents());
+        assertEquals(false, activity.isWithAdult());
         assertEquals(100, activity.getTimeLimit());
         assertEquals(LocalDateTime.of(2021, 9, 24, 19, 30), activity.getFromDate());
         assertEquals(LocalDateTime.of(2021, 9, 24, 20, 30), activity.getToDate());
