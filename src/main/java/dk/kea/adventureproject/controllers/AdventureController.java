@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * @author Daniel & Hans
+ * @author Daniel Westphal & Hans
  */
 @Controller
 public class AdventureController {
