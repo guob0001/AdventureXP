@@ -15,14 +15,17 @@ public class ActivityService {
     public Activity updateActivity(int activityId){
         return activityrepository.updateActivity(activityId);
     }
+
     //Author Guobin Får fremvist alle activities.
     public List<Activity> readAllActivities(){
         return ActivityRepository.readAllActivities();
     }
+
     //Author Guobin sletter activity via ID
     public boolean deleteActivity(int activityId){
         return ActivityRepository.deleteActivity(activityId);
     }
+
     //Author Guobin opretter ny activity
     public Activity createNewActivity(Activity a){
         return activityrepository.createNewActivity(a);

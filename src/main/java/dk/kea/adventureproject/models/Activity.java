@@ -1,10 +1,9 @@
 package dk.kea.adventureproject.models;
 
-import java.time.LocalDateTime;
-
 /**
  * @author Christian og Joachim
  */
+
 public class Activity {
 
     private int activityID;

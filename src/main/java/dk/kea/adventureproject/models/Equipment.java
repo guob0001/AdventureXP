@@ -11,6 +11,7 @@ public class Equipment {
 
     @Id
     private int equipmentID;
+
     private int activityID;
     private String equipmentName;
     private int amount;
@@ -19,6 +20,10 @@ public class Equipment {
     }
 
     public Equipment(int equipmentID, int activityID, String equipmentName, int amount) {
+        this.equipmentID = equipmentID;
+        this.activityID = activityID;
+        this.equipmentName = equipmentName;
+        this.amount = amount;
     }
 
     public int getEquipmentID() { return equipmentID; }
