@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 import java.time.LocalDateTime;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 
 public class ActivityTest {
 
@@ -25,7 +26,7 @@ public class ActivityTest {
         assertEquals(18, activity.getAgeLimit());
         assertEquals(1, activity.getActivityID());
         assertEquals("Sumo", activity.getActivityName());
-        assertEquals(false, activity.isWithParents());
+        assertFalse(activity.isWithParents());
         assertEquals(100, activity.getTimeLimit());
         assertEquals(LocalDateTime.of(2021, 9, 24, 19, 30), activity.getFromDate());
         assertEquals(LocalDateTime.of(2021, 9, 24, 20, 30), activity.getToDate());

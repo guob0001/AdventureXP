@@ -62,4 +62,3 @@ public class ActivityRepository {
         template.update(sql, activity.getActivityID());
     }
 }
-
