@@ -90,5 +90,4 @@ public class Activity {
     public void setTimeLimit(double timeLimit) {
         this.timeLimit = timeLimit;
     }
-
 }
