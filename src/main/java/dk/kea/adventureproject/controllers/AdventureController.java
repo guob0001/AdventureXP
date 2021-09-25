@@ -17,6 +17,31 @@ public class AdventureController {
         return "index.html";
     }
 
+    @GetMapping("/paintball")
+    public String paintball(){
+        return "paintball.html";
+    }
+
+    @GetMapping("/gocart")
+    public String gocart(){
+        return "gocart.html";
+    }
+
+    @GetMapping("/minigolf")
+    public String minigolf(){
+        return "minigolf.html";
+    }
+
+    @GetMapping("/sumo")
+    public String sumo(){
+        return "sumo.html";
+    }
+
+    @GetMapping("/create")
+    public String create(){
+        return "create.html";
+    }
+
     @GetMapping("/activityOverview")
     public String activityOverview(){
         return "activityOverview.html";

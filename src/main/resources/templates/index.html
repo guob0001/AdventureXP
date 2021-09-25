@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -14,7 +14,7 @@
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
         <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
+        <link rel="stylesheet" th:href="@{css/styles.css}">
     </head>
     <body id="page-top">
         <!-- Navigation-->
@@ -27,7 +27,7 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="index.html">Forside</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#page-top">Forside</a></li>
                         <li class="nav-item"><a class="nav-link" href="#portfolio">Aktiviteter</a></li>
                     </ul>
                 </div>
@@ -53,7 +53,7 @@
                     <div class="col-lg-4 col-sm-6 mb-4">
                         <!-- Activity item 1-->
                         <div class="portfolio-item">
-                            <a class="portfolio-link" href="paintball.html">
+                            <a class="portfolio-link" href="paintball">
                                 <div class="portfolio-hover">
                                     <div class="portfolio-hover-content"></i></div>
                                 </div>
@@ -67,7 +67,7 @@
                     <div class="col-lg-4 col-sm-6 mb-4">
                         <!-- Activity item 2-->
                         <div class="portfolio-item">
-                            <a class="portfolio-link" href="gocart.html">
+                            <a class="portfolio-link" href="gocart">
                                 <div class="portfolio-hover">
                                     <div class="portfolio-hover-content"></div>
                                 </div>
@@ -81,7 +81,7 @@
                     <div class="col-lg-4 col-sm-6 mb-4">
                         <!-- Activity item 3-->
                         <div class="portfolio-item">
-                            <a class="portfolio-link" href="minigolf.html">
+                            <a class="portfolio-link" href="minigolf">
                                 <div class="portfolio-hover">
                                     <div class="portfolio-hover-content"></div>
                                 </div>
@@ -95,7 +95,7 @@
                     <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
                         <!-- Activity item 4-->
                         <div class="portfolio-item">
-                            <a class="portfolio-link" href="sumo.html">
+                            <a class="portfolio-link" href="sumo">
                                 <div class="portfolio-hover">
                                     <div class="portfolio-hover-content"></div>
                                 </div>
@@ -109,7 +109,7 @@
                     <div class="col-lg-4 col-sm-6 mb-4 mb-sm-0">
                         <!-- Activity item 5-->
                         <div class="portfolio-item">
-                            <a class="portfolio-link" href="create.html">
+                            <a class="portfolio-link" href="create">
                                 <div class="portfolio-hover">
                                     <div class="portfolio-hover-content"></i></div>
                                 </div>
