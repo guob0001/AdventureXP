@@ -1,16 +1,24 @@
 package dk.kea.adventureproject.models;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
 /**
  * @author Christian og Joachim
  */
-
+@Entity
 public class Activity {
 
+    @Id
     private int activityID;
+
     private String activityName;
     private int ageLimit;
     private int heightLimit;
     private double timeLimit;
+
+    public Activity() {
+    }
 
     public Activity(int activityID, String activityName, int ageLimit, int heightLimit, double timeLimit) {
         this.activityID = activityID;
