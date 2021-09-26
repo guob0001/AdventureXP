@@ -58,8 +58,8 @@ public class ActivityRepository {
             activity.getIsWithAdult());
     }
 
-    public void deleteActivity(Activity activity){
+    public void deleteActivity(int activityID){ //2609 2021 Hans: jeg har ændret denne metode til at bruge int istedetfor activity
         String sql = "DELETE activities WHERE activityID = ?";
-        template.update(sql, activity.getActivityID());
+        template.update(sql, activityID);
     }
 }
