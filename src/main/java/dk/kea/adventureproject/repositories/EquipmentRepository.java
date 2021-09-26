@@ -23,7 +23,7 @@ public class EquipmentRepository {
          */
     public void createEquipment(Equipment equipment) {
         String sql = "INSERT INTO tmp (activityID,activityName,minimumAge,minimumHeight,isWithAdult) VALUES(?,?,?,?,?)";
-        jdbcTemplate.update(sql,
+        template.update(sql,
                 equipment.getEquipmentID(),
                 equipment.getActivityID(),
                 equipment.getEquipmentID(),
@@ -37,14 +37,14 @@ public class EquipmentRepository {
     public List<Equipment> readAllEquipmentById(){
         String sql = "SELECT * FROM tmp";
         RowMapper<Equipment> equipmentRowMapper = new BeanPropertyRowMapper<Equipment>(Equipment.class);
-        return jdbcTemplate.query(sql,equipmentRowMapper);
+        return template.query(sql,equipmentRowMapper);
     }
         /** Update equipment by Id, opdatere et equipment ud fra activity id
         * @param equipment
         */
     public void updateEquipmentById(Equipment equipment){
         String sql = "UPDATE tmp SET activityName = ?,minimumAge = ?,minimumHeight = ?,isWithAdult = ?";
-        jdbcTemplate.update(sql,
+        template.update(sql,
                 equipment.getEquipmentName(),
                 equipment.getAmount());
     }
@@ -54,6 +54,6 @@ public class EquipmentRepository {
          */
     public void deleteEquipmentById(Equipment equipment){
         String sql = "DELETE tmp WHERE activityID = ?";
-        jdbcTemplate.update(sql, equipment.getEquipmentID());
+        template.update(sql, equipment.getEquipmentID());
     }
 }
