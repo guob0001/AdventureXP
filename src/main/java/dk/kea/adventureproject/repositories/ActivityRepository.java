@@ -36,8 +36,8 @@ public class ActivityRepository {
                 activity.getActivityID(),
                 activity.getActivityName(),
                 activity.getAgeLimit(),
-                activity.getHeightLimit().
-                activity.isWithAdult());
+                activity.getHeightLimit(),
+                activity.getIsWithAdult());
 
             //int activityID, String activityName, int ageLimit, int minimumHeight, boolean isWithAdult
     }
@@ -55,7 +55,7 @@ public class ActivityRepository {
             activity.getActivityName(),
             activity.getAgeLimit(),
             activity.getHeightLimit(),
-            activity.isWithAdult());
+            activity.getIsWithAdult());
     }
 
     public void deleteActivity(Activity activity){
