@@ -11,11 +11,11 @@ public class Activity {
 
     @Id
     private int activityID;
-
     private String activityName;
     private int ageLimit;
     private int heightLimit;
     private double timeLimit;
+    private boolean isWithAdult;
 
     public Activity() {
     }
@@ -65,5 +65,13 @@ public class Activity {
 
     public void setTimeLimit(double timeLimit) {
         this.timeLimit = timeLimit;
+    }
+
+    public boolean isWithAdult() {
+        return isWithAdult;
+    }
+
+    public void setWithAdult(boolean withAdult) {
+        isWithAdult = withAdult;
     }
 }

@@ -11,7 +11,6 @@ public class Equipment {
 
     @Id
     private int equipmentID;
-
     private int activityID;
     private String equipmentName;
     private int amount;

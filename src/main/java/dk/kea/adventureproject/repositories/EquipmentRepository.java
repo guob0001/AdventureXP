@@ -16,7 +16,7 @@ import java.util.List;
 @Repository
 public class EquipmentRepository {
     @Autowired
-    JdbcTemplate jdbcTemplate;
+    JdbcTemplate template;
 
         /** Create new equipment item, linked til activityID
          * @param equipment
