@@ -11,7 +11,6 @@ public class Activity {
 
     @Id
     private int activityID;
-
     private String activityName;
     private int ageLimit;
     private int heightLimit;
@@ -26,7 +25,6 @@ public class Activity {
         this.activityName = activityName;
         this.ageLimit = ageLimit;
         this.timeLimit = timeLimit;
-        this.isWithAdult = isWithAdult;
     }
 
     public int getHeightLimit() {
@@ -69,7 +67,11 @@ public class Activity {
         this.timeLimit = timeLimit;
     }
 
-    public boolean getIsWithAdult() {return isWithAdult;}
+    public boolean isWithAdult() {
+        return isWithAdult;
+    }
 
-    public void setIsWithAdult(boolean isWithAdult) {this.isWithAdult = isWithAdult;}
+    public void setWithAdult(boolean withAdult) {
+        isWithAdult = withAdult;
+    }
 }

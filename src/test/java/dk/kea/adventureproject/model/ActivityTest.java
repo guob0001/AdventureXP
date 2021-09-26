@@ -21,6 +21,6 @@ public class ActivityTest {
         assertEquals(1, activity.getActivityID());
         assertEquals("Sumo", activity.getActivityName());
         assertEquals(100, activity.getTimeLimit());
-        assertEquals(true, activity.getIsWithAdult());
+        assertEquals(true, activity.isWithAdult());
     }
 }

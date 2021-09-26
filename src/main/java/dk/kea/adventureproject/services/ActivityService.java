@@ -3,28 +3,37 @@ import dk.kea.adventureproject.models.Activity;
 import dk.kea.adventureproject.repositories.ActivityRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import java.util.List;
 
 @Service
 public class ActivityService {
     @Autowired
-    ActivityRepository activityrepository;
-
-    //Service skaber forbindelse til Repo, og gør at vi kan bruge metoderne i Repo klasse(r) */
-    //Author Guobin/Oliver Bruges til at kalde på ActivtyRepositorys "updateActivity" klasse, og opdaterer den activity med det pågældende ID
+    ActivityRepository activityRepository;
+    /*
+    Service skaber forbindelse til Repo, og gør at vi kan bruge metoderne i Repo klasse(r) */
+    //Author Guobin Bruges til at kalde på ActivtyRepositorys "updateActivity" klasse, og opdaterer den activity med det pågældende ID
     public void updateActivity(Activity activity){
-        activityrepository.updateActivity(activity);
+        activityRepository.updateActivity(activity);
     }
-    //Author Guobin/Oliver Får fremvist alle activities.
+
+    //Author Guobin Får fremvist alle activities.
     public List<Activity> readAllActivities(){
-        return activityrepository.readAllActivities();
+        return activityRepository.readAllActivities();
     }
-    //Author Guobin/Oliver sletter activity via ID
-    public void deleteActivity(Activity activity){
-        activityrepository.deleteActivity(activity);
+    //Viser én aktivitet ud fra ID
+    public Activity readActivityByID(int activityID) {
+        return activityRepository.readActivityByID(activityID);
     }
-    //Author Guobin/Oliver opretter ny activity
-    public void createNewActivity(Activity a){
-        activityrepository.createNewActivity(a);
+
+    //Author Guobin sletter activity via ID
+    public void deleteActivity(int activityId){
+        activityRepository.deleteActivity(activityId);
     }
+
+    //Author Guobin opretter ny activity
+    public void createNewActivity(Activity activity){
+        activityRepository.createNewActivity(activity);
+    }
+
 }
