@@ -14,13 +14,13 @@ public class Activity {
     private String activityName;
     private int ageLimit;
     private int heightLimit;
-    private double timeLimit;
+    private int timeLimit;
     private boolean isWithAdult;
 
     public Activity() {
     }
 
-    public Activity(int activityID, String activityName, int ageLimit, int heightLimit, double timeLimit, boolean isWithAdult) {
+    public Activity(int activityID, String activityName, int ageLimit, int heightLimit, int timeLimit, boolean isWithAdult) {
         this.activityID = activityID;
         this.activityName = activityName;
         this.ageLimit = ageLimit;
@@ -59,11 +59,11 @@ public class Activity {
         this.ageLimit = ageLimit;
     }
 
-    public double getTimeLimit() {
+    public int getTimeLimit() {
         return timeLimit;
     }
 
-    public void setTimeLimit(double timeLimit) {
+    public void setTimeLimit(int timeLimit) {
         this.timeLimit = timeLimit;
     }
 
