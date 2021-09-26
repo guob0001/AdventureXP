@@ -1,5 +1,7 @@
 package dk.kea.adventureproject.controllers;
 
+import dk.kea.adventureproject.repositories.ActivityRepository;
+import dk.kea.adventureproject.services.ActivityService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,6 +14,8 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @Controller
 public class AdventureController {
+
+    ActivityService activityServiceInstanceForController = new ActivityService();
 
     @GetMapping("/index")
     public String index(){
@@ -55,11 +59,10 @@ public class AdventureController {
         return "activity";
     }
 
-    @GetMapping("/deleteActivity")
-
-    @PostMapping("/activity/{activityID}")
+    @GetMapping("/deleteActivity/{activityID}")
     public String activityRemove(@PathVariable("activityID") int activityID){
-        return "delete not complete";
+        activityServiceInstanceForController.deleteActivity(activityID);
+        return "redirect://";
     }
 
 
