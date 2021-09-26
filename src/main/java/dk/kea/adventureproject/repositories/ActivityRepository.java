@@ -36,7 +36,7 @@ public class ActivityRepository {
                 activity.getActivityID(),
                 activity.getActivityName(),
                 activity.getAgeLimit(),
-                activity.getHeightLimit(),
+                activity.getHeightLimit().
                 activity.isWithAdult());
 
             //int activityID, String activityName, int ageLimit, int minimumHeight, boolean isWithAdult

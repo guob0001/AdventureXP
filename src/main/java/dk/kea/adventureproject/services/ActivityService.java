@@ -1,4 +1,5 @@
 package dk.kea.adventureproject.services;
+import dk.kea.adventureproject.models.Activity;
 import dk.kea.adventureproject.repositories.ActivityRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
