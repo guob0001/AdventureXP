@@ -234,6 +234,15 @@ sup {
   top: -0.5em;
 }
 
+.theButtons {
+  color: #fff;
+  text-decoration: underline;
+}
+.theButtons:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
 a {
   color: #ffc800;
   text-decoration: underline;
