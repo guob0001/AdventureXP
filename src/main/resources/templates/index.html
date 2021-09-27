@@ -49,79 +49,50 @@
                     <h2 class="section-heading text-uppercase">Aktiviteter</h2>
                     <h3 class="section-subheading text-muted">Se, tilføj og ret i AdventureXP's aktiviteter.</h3>
                 </div>
-                <div class="row">
-                    <div class="col-lg-4 col-sm-6 mb-4">
-                        <!-- Activity item 1-->
-                        <div class="portfolio-item">
-                            <a class="portfolio-link" href="paintball">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content"></i></div>
-                                </div>
-                                <img class="img-fluid" src="assets/img/portfolio/1.jpg" alt="..." />
-                            </a>
-                            <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">PAINTBALL</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 mb-4">
-                        <!-- Activity item 2-->
-                        <div class="portfolio-item">
-                            <a class="portfolio-link" href="gocart">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content"></div>
-                                </div>
-                                <img class="img-fluid" src="assets/img/portfolio/2.jpg" alt="..." />
-                            </a>
-                            <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">GOCART</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 mb-4">
-                        <!-- Activity item 3-->
-                        <div class="portfolio-item">
-                            <a class="portfolio-link" href="minigolf">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content"></div>
-                                </div>
-                                <img class="img-fluid" src="assets/img/portfolio/3.jpg" alt="..." />
-                            </a>
-                            <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">MINIGOLF</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
-                        <!-- Activity item 4-->
-                        <div class="portfolio-item">
-                            <a class="portfolio-link" href="sumo">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content"></div>
-                                </div>
-                                <img class="img-fluid" src="assets/img/portfolio/4.jpg" alt="..." />
-                            </a>
-                            <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">SUMO WRESTLING</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 mb-4 mb-sm-0">
-                        <!-- Activity item 5-->
-                        <div class="portfolio-item">
-                            <a class="portfolio-link" href="create">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content"></i></div>
-                                </div>
-                                <img class="img-fluid" src="assets/img/portfolio/create.png" alt="..." />
-                            </a>
-                            <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">OPRET AKTIVITET</div>
-                            </div>
-                        </div>
-                    </div>
-                    </div>
-                </div>
+                <table class="table table-dark">
+                    <thead>
+                    <tr>
+                        <th scope="col">Aktivitet</th>
+                        <th scope="col">Aldersgrænse</th>
+                        <th scope="col">Højdekrav</th>
+                        <th scope="col">Tidsgrænse</th>
+                        <th scope="col">Med forælder</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row"><a class="portfolio-link" href="paintball">Paintball</a></th>
+                        <td>18</td>
+                        <td>147</td>
+                        <td>2 timer</td>
+                        <td>ja</td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><a class="portfolio-link" href="gocart">Gocart</a></th>
+                        <td>18</td>
+                        <td>147</td>
+                        <td>2 timer</td>
+                        <td>ja</td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><a class="portfolio-link" href="minigolf">Minigolf</a></th>
+                        <td>18</td>
+                        <td>147</td>
+                        <td>2 timer</td>
+                        <td>ja</td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><a class="portfolio-link" href="sumo">Sumo Wrestling</a></th>
+                        <td>18</td>
+                        <td>147</td>
+                        <td>2 timer</td>
+                        <td>ja</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <button type="button" class="btn btn-primary" th:href="@{create}" style="margin-right: 10px">Tilføj aktivitet</button>
+                <button type="button" class="btn btn-primary" style="margin-right: 10px">Rediger</button>
+                <button type="button" class="btn btn-primary" style="margin-right: 10px">Slet</button>
             </div>
         </section>
         
