@@ -1,15 +1,10 @@
 package dk.kea.adventureproject.models;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
 
 /**
  * @author Christian og Joachim
  */
-@Entity
 public class Activity {
-
-    @Id
     private int activityID;
     private String activityName;
     private int ageLimit;
@@ -67,6 +62,7 @@ public class Activity {
 
     public void setTimeLimit(int timeLimit) {
         this.timeLimit = timeLimit;
+        this.heightLimit = heightLimit;
     }
 
     public boolean isWithAdult() {

@@ -27,7 +27,6 @@ public class ActivityRepository {
 
     @Autowired
     JdbcTemplate template;
-    //TODO Change tmp With the right tablename for the database.
 
     public void createNewActivity(Activity activity) {
         String sql = "INSERT INTO activities (activityID, activityName, ageLimit, heightLimit, timeLimit, isWithAdult) VALUES(?, ?, ?, ?, ?, ?)";
