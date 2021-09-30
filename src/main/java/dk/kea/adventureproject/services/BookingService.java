@@ -1,5 +1,6 @@
 package dk.kea.adventureproject.services;
 import dk.kea.adventureproject.models.Booking;
+import dk.kea.adventureproject.models.SearchBooking;
 import dk.kea.adventureproject.repositories.BookingRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,6 +22,11 @@ public class BookingService {
 
     public void updateBooking(Booking booking){
         bookingRepository.updateBooking(booking);
+    }
+
+    public List<SearchBooking> searchBooking(String bookingID, String activityID,
+     String activityName, String employeeName, String customerName, String customerPhoneNumber, String startDate, String dateFrom, String dateTo) {
+        return bookingRepository.searchBooking(bookingID, activityID, activityName, employeeName, customerName, customerPhoneNumber, startDate, dateFrom, dateTo);
     }
 
     /*Øpublic Booking readBookingById(int bookingId) {

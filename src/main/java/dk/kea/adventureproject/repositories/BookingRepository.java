@@ -2,6 +2,7 @@ package dk.kea.adventureproject.repositories;
 
 import dk.kea.adventureproject.models.Activity;
 import dk.kea.adventureproject.models.Booking;
+import dk.kea.adventureproject.models.SearchBooking;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -24,7 +25,7 @@ public class BookingRepository {
                 booking.getCustomerName(),
                 booking.getCustomerTelephone(),
                 booking.getStartDate(),
-                booking.getTimeStart();
+                booking.getTimeStart());
     }
 
     public List<Booking> readAllBookings() {
@@ -35,7 +36,7 @@ public class BookingRepository {
 
     public Booking readBookingByID(int bookingId) {
         String sql = "SELECT * FROM booking WHERE bookingId = ?";
-        RowMapper<Booking> rowMapper = new BeanPropertyRowMapper<>(Activity.class);
+        RowMapper<Booking> rowMapper = new BeanPropertyRowMapper<>(Booking.class);
         return template.queryForObject(sql, rowMapper, bookingId);
     }
 
@@ -47,6 +48,14 @@ public class BookingRepository {
                 booking.getCustomerTelephone(),
                 booking.getStartDate(),
                 booking.getTimeStart());
+    }
+
+    public List<SearchBooking> searchBooking(String BookingID, String activityID,
+     String activityName, String employeeName, String customerName, String customerPhoneNumber, String startDate, String dateFrom, String dateTo) {
+        String sql = "CALL searchBooking (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        RowMapper rowMapper = new BeanPropertyRowMapper(SearchBooking.class);
+        return template.query(sql, rowMapper, BookingID, activityID,
+                activityName, employeeName, customerName, customerPhoneNumber, startDate, dateFrom, dateTo);
     }
 
     public void deleteBooking(int bookingId) {
