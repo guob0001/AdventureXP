@@ -45,13 +45,13 @@ public class BookingController {
      */
     @GetMapping("/updateBooking/{bookingID}")
     public String updateBooking(@PathVariable int bookingID, Model model) {
-        model.addAttribute("booking", bookingServiceForController.findBookingById(bookingID));
+        model.addAttribute("booking", bookingService.findBookingById(bookingID));
         return "updateBooking";
     }
 
     @PostMapping("/updateBooking")
     public String updateBooking(@ModelAttribute Booking booking) {
-        bookingServiceForController.updateBooking(booking);
+        bookingService.updateBooking(booking);
         return "redirect:/bookingIndex";
     }
 
