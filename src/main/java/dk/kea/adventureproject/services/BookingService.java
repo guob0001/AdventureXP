@@ -11,6 +11,7 @@ public class BookingService {
 
     @Autowired
     BookingRepository bookingRepository;
+
     public void createNewBooking(Booking booking){
         bookingRepository.createNewBooking(booking);
     }
@@ -21,6 +22,15 @@ public class BookingService {
 
     public void updateBooking(Booking booking){
         bookingRepository.updateBooking(booking);
+    }
+
+    /**
+     * @author Christian & Joachim
+     * @param bookingId
+     * @return
+     */
+    public Booking findBookingById(int bookingId) {
+        return bookingRepository.readBookingByID(bookingId);
     }
 
     /*Øpublic Booking readBookingById(int bookingId) {

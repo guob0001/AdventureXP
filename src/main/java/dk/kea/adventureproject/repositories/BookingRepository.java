@@ -24,7 +24,7 @@ public class BookingRepository {
                 booking.getCustomerName(),
                 booking.getCustomerTelephone(),
                 booking.getStartDate(),
-                booking.getTimeStart();
+                booking.getTimeStart());
     }
 
     public List<Booking> readAllBookings() {
@@ -35,13 +35,13 @@ public class BookingRepository {
 
     public Booking readBookingByID(int bookingId) {
         String sql = "SELECT * FROM booking WHERE bookingId = ?";
-        RowMapper<Booking> rowMapper = new BeanPropertyRowMapper<>(Activity.class);
+        RowMapper<Booking> rowMapper = new BeanPropertyRowMapper<>(Booking.class);
         return template.queryForObject(sql, rowMapper, bookingId);
     }
 
     public void updateBooking(Booking booking) {
-        String sql = "UPDATE booking SET employeeName = ?, customerName = ?, customerTelephone = ?, startDate = ?, timeStart = ?";
-        template.update(sql,
+        String updateSql = "UPDATE booking SET employeeName = ?, customerName = ?, customerTelephone = ?, startDate = ?, timeStart = ?";
+        template.update(updateSql,
                 booking.getEmployeeName(),
                 booking.getCustomerName(),
                 booking.getCustomerTelephone(),
