@@ -47,6 +47,7 @@ public class BookingController {
 
     @PostMapping("/updateBooking")
     public String updateBooking(@ModelAttribute Booking booking) {
+        System.out.println(booking.getBookingId());
         bookingService.updateBooking(booking);
         return "redirect:/searchBooking";
     }

@@ -41,15 +41,15 @@ public class BookingRepository {
     }
 
     public void updateBooking(Booking booking) {
-        String updateSql = "UPDATE booking SET activityID = ?, employeeName = ?, customerName = ?, customerTelephone = ?, startDate = ?, timeStart = ? " +
-                "WHERE " + booking.getBookingId();
+        String updateSql = "UPDATE booking SET activityID = ?, employeeName = ?, customerName = ?, customerTelephone = ?, startDate = ?, timeStart = ? WHERE bookingID = ?";
         template.update(updateSql,
                 booking.getActivityID(),
                 booking.getEmployeeName(),
                 booking.getCustomerName(),
                 booking.getCustomerTelephone(),
                 booking.getStartDate(),
-                booking.getTimeStart());
+                booking.getTimeStart(),
+                booking.getBookingId());
     }
 
     public List<SearchBooking> searchBooking(String BookingID, String activityID,

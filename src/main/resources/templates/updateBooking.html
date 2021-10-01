@@ -43,39 +43,39 @@
             <h2 class="section-heading text-uppercase">Opdater booking</h2>
             <h3 class="section-subheading text-muted">Se, tilføj og ret i booking.</h3>
         </div>
-        <form class="form" id="bookingupdate" onsubmit="return updateBooking()" action="/updateBooking"
+        <form class="form" id="bookingUpdate" action="/updateBooking"
               method="POST">
-            <Label for="formGroupExampleInput" name="BookingID" th:value="${booking.bookingId}">Booking ID</Label>
-            <input for="formGroupExampleInput" name="ActivityID" class="form-control" id="formGroupExampleInput6">
+            <span th:text="'Booking ID: '+${booking.bookingId}"/>
+            <input hidden name="bookingId" th:value="${booking.bookingId}">
             <div class="form-group">
-                <label for="formGroupExampleInput">Aktivitet</label>
-                <input type="text" name="activityName" class="form-control" id="formGroupExampleInput"
-                       th:value="${activity.activityName}">
+                <label for="formGroupExampleInput1">Aktivitet</label>
+                <input type="text" name="activityID" class="form-control" id="formGroupExampleInput1"
+                       th:value="${booking.activityID}">
             </div>
             <div class="form-group">
-                <label for="formGroupExampleInput5">Beskrivelse af Aktivitet</label>
-                <input type="text" name="description" class="form-control" id="formGroupExampleInput5"
-                       th:value="${activity.description}">
+                <label for="formGroupExampleInput2">Medarbejder</label>
+                <input type="text" name="employeeName" class="form-control" id="formGroupExampleInput2"
+                       th:value="${booking.employeeName}">
             </div>
             <div class="form-group">
-                <label for="formGroupExampleInput2">Aldersgrænse</label>
-                <input type="text" name="ageLimit" class="form-control" id="formGroupExampleInput2"
-                       th:value="${activity.ageLimit}">
+                <label for="formGroupExampleInput3">Kundenavn</label>
+                <input type="text" name="customerName" class="form-control" id="formGroupExampleInput3"
+                       th:value="${booking.customerName}">
             </div>
             <div class="form-group">
-                <label for="formGroupExampleInput3">Højdekrav</label>
-                <input type="text" name="heightLimit" class="form-control" id="formGroupExampleInput3"
-                       th:value="${activity.heightLimit}">
+                <label for="formGroupExampleInput4">Kunde tlf. Nr</label>
+                <input type="text" name="customerTelephone" class="form-control" id="formGroupExampleInput4"
+                       th:value="${booking.customerTelephone}">
             </div>
             <div class="form-group">
-                <label for="formGroupExampleInput4">Tidsgrænse</label>
-                <input type="text" name="timeLimit" class="form-control" id="formGroupExampleInput4"
-                       th:value="${activity.timeLimit}">
+                <label for="formGroupExampleInput5">Dato</label>
+                <input type="text" name="startDate" class="form-control" id="formGroupExampleInput5"
+                       th:value="${booking.startDate}">
             </div>
-            <div>
-                <label>Kræves der voksen?</label><br>
-                <input type="checkbox" name="isWithAdult" th:value="${activity.withAdult}">
-
+            <div class="form-group">
+                <label for="formGroupExampleInput6">Tidspunkt</label>
+                <input type="text" name="timeStart" class="form-control" id="formGroupExampleInput6"
+                       th:value="${booking.timeStart}">
             </div>
             <br>
             <button type="submit" class="btn btn-primary" style="margin-right: 10px">
