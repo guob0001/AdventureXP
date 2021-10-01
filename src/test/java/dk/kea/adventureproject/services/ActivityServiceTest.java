@@ -17,7 +17,7 @@ class ActivityServiceTest {
     @Autowired
     ActivityService activityService;
 
-    Activity activity = new Activity(1, "Sumo", 18, 150, 100, "Socks", "Ja");
+    Activity activity = new Activity(1, "Sumo", 18, 150, 100, "Socks");
 
     @Test
     void updateActivity() {

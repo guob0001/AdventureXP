@@ -62,7 +62,6 @@
                 <td th:text="${activities.getAgeLimit}"> Agelimit</td>
                 <td th:text="${activities.getHeightLimit}"> HeightLimit</td>
                 <td th:test="${activities.getTimeLimit}"></td>
-                <td th:text="${activities.isWithAdult}"></td>
                 <td>
                     <a th:href="@{'/updateActivity/' + ${activities.activityID}}">
                         <button type="button" class="btn btn-primary" style="margin-right: 10px">Rediger aktivitet

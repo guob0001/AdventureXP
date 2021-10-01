@@ -20,7 +20,7 @@
 <!-- Navigation-->
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
     <div class="container">
-        <a class="navbar-brand" href="/"><img src="assets/img/adventure-logo.svg" alt="..." style="height: 100px;"/></a>
+        <a class="navbar-brand" href="index"><img src="assets/img/adventure-logo.svg" alt="..." style="height: 100px;"/></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
                 aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             Menu
@@ -29,7 +29,6 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
                 <li class="nav-item"><a class="nav-link" href="/">Forside</a></li>
-                <li class="nav-item"><a class="nav-link" href="/searchBooking">Bookings</a></li>
             </ul>
         </div>
     </div>
@@ -51,11 +50,7 @@
                        placeholder="Indtast aktivitetsnavn"
                        required>
             </div>
-            <div class="form-group">
-                <label for="formGroupExampleInput5">Beskrivelse af Aktivitet</label>
-                <input type="text" name="description" class="form-control" id="formGroupExampleInput5"
-                       placeholder="Beksrivelse" required>
-            </div>
+
             <div class="form-group">
                 <label for="formGroupExampleInput2">Aldersgrænse</label>
                 <input type="text" name="ageLimit" class="form-control" id="formGroupExampleInput2"
@@ -74,11 +69,17 @@
                        placeholder="Indtast tidsgrænse"
                        required>
             </div>
-            <div>
-                <label>Kræves der voksen?</label><br>
-                <input type="checkbox" onchange="" name="isWithAdult" placeholder="Vælg her">
-
+            <div class="form-group">
+                <label for="formGroupExampleInput6">Beskrivelse af Aktivitet</label>
+                <input type="text" name="description" class="form-control" id="formGroupExampleInput6"
+                       placeholder="Beksrivelse: Fx. Kræves der forældre hvis personen er under 18'år?" required>
             </div>
+
+         <!--   <div class="form-group">
+                <label for="formGroupExampleInput6">Kræves der voksen?</label><br>
+                <input type="checkbox" name="isWithAdult" class="form-control" id="formGroupExampleInput6" value="ja">
+            </div>
+            -->
             <br>
             <button type="submit" class="btn btn-primary" style="margin-right: 10px">
                 <a class="theButtons">Opret</a></button>
@@ -116,6 +117,7 @@
 <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
 <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+<script src="js/ButtonScript.js"></script>
 
 </body>
 </html>

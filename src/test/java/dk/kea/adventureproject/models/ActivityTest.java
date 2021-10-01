@@ -15,14 +15,13 @@ public class ActivityTest {
     @Test
     void Activity() {
 
-        Activity activity = new Activity(1, "Sumo", 18, 150, 100, "Socks", "Ja");
+        Activity activity = new Activity(1, "Sumo", 18, 150, 100, "Socks");
 
         assertEquals(18, activity.getAgeLimit());
         assertEquals(150, activity.getHeightLimit());
         assertEquals(1, activity.getActivityID());
         assertEquals("Sumo", activity.getActivityName());
         assertEquals(100, activity.getTimeLimit());
-        assertEquals("Ja", activity.isWithAdult());
         assertEquals("Socks", activity.getDescription());
     }
 }
