@@ -6,6 +6,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.util.*;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
@@ -26,21 +28,5 @@ class ActivityServiceTest {
         activityService.updateActivity(activity);
 
         assertEquals("Sumo 2", activity.getActivityName());
-    }
-
-    @Test
-    void readAllActivities() {
-    }
-
-    @Test
-    void readActivityByID() {
-    }
-
-    @Test
-    void deleteActivity() {
-    }
-
-    @Test
-    void createNewActivity() {
     }
 }

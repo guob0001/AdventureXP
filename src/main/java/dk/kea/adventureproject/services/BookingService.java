@@ -1,4 +1,5 @@
 package dk.kea.adventureproject.services;
+
 import dk.kea.adventureproject.models.Booking;
 import dk.kea.adventureproject.models.SearchBooking;
 import dk.kea.adventureproject.repositories.BookingRepository;
@@ -13,29 +14,29 @@ public class BookingService {
     @Autowired
     BookingRepository bookingRepository;
 
-    public void createNewBooking(Booking booking){
+    public void createNewBooking(Booking booking) {
         bookingRepository.createNewBooking(booking);
     }
 
-    public List<Booking> readAllBookings(){
+    public List<Booking> readAllBookings() {
         return bookingRepository.readAllBookings();
     }
 
-    public void updateBooking(Booking booking){
+    public void updateBooking(Booking booking) {
         bookingRepository.updateBooking(booking);
     }
 
     /**
-     * @author Christian & Joachim
      * @param bookingId
      * @return
+     * @author Christian & Joachim
      */
     public Booking findBookingById(int bookingId) {
         return bookingRepository.readBookingByID(bookingId);
     }
 
     public List<SearchBooking> searchBooking(String bookingID, String activityID,
-     String activityName, String employeeName, String customerName, String customerPhoneNumber, String startDate, String dateFrom, String dateTo) {
+                                             String activityName, String employeeName, String customerName, String customerPhoneNumber, String startDate, String dateFrom, String dateTo) {
         return bookingRepository.searchBooking(bookingID, activityID, activityName, employeeName, customerName, customerPhoneNumber, startDate, dateFrom, dateTo);
     }
 
