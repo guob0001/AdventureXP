@@ -53,14 +53,15 @@ public class ActivityRepository {
         return template.queryForObject(sql, rowMapper, activityID);
     }
 
-    public void updateActivity(Activity activity) {
-        String sql = "UPDATE activities SET activityName = ?, ageLimit = ?, heightLimit = ?, timeLimit = ?, description = ?";
+    public void updateActivity(int activityID, Activity activity) {
+        String sql = "UPDATE activities SET activityName = ?, ageLimit = ?, heightLimit = ?, timeLimit = ?, description = ? WHERE activityID = ?";
         template.update(sql,
                 activity.getActivityName(),
                 activity.getAgeLimit(),
                 activity.getHeightLimit(),
                 activity.getTimeLimit(),
-                activity.getDescription());
+                activity.getDescription(),
+                activityID);
     }
 
     public void deleteActivity(int activityID) {

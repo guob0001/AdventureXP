@@ -43,7 +43,7 @@ public class AdventureController {
 
     @PostMapping("/updateActivity")
     public String updateActivity(@ModelAttribute Activity activity) {
-        activityService.updateActivity(activity);
+        activityService.updateActivity(activity.getActivityID(), activity);
         return "redirect:/";
     }
 

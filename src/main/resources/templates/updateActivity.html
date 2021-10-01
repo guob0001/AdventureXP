@@ -45,8 +45,8 @@
         </div>
         <form class="form" id="activityupdate" onsubmit="return updateActivity()" action="/updateActivity"
               method="POST">
-            <input hidden name="activityID" value="0">
-            <div class="form-group">
+            <input type="hidden" name="activityID" th:value="${activity.activityID}">
+           <div class="form-group">
                 <label for="formGroupExampleInput">Aktivitet</label>
                 <input type="text" name="activityName" class="form-control" id="formGroupExampleInput"
                        th:value="${activity.activityName}">
@@ -74,7 +74,7 @@
 
             <br>
             <button type="submit" class="btn btn-primary" style="margin-right: 10px">
-                <a class="theButtons">Opret</a></button>
+                <a class="theButtons">Opdater</a></button>
             <button type="reset" class="btn btn-primary" style="margin-right: 10px">
                 <a class="theButtons">Fortryd</a></button>
         </form>
