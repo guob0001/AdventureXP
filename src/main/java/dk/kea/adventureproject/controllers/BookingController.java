@@ -42,19 +42,21 @@ public class BookingController {
     @GetMapping("/updateBooking/{bookingID}")
     public String updateBooking(@PathVariable int bookingID, Model model) {
         model.addAttribute("booking", bookingService.findBookingById(bookingID));
-        return "updateBooking";
+        return "/updateBooking";
     }
 
     @PostMapping("/updateBooking")
     public String updateBooking(@ModelAttribute Booking booking) {
         bookingService.updateBooking(booking);
-        return "redirect:/bookingIndex";
+        return "redirect:/searchBooking";
     }
 
 
     @GetMapping("/searchBooking")
-    public String searchBooking() {
-        return "/searchBooking";
+    public String searchBooking(Model model) {
+        List<SearchBooking> bookingList = bookingService.searchBooking("","","","","","", "","","");
+        model.addAttribute("bookingList", bookingList);
+      return "/searchBooking";
     }
 
     @PostMapping("/searchBooking")
