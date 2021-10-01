@@ -8,6 +8,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
+import java.sql.SQLException;
 import java.util.List;
 
 /**
@@ -30,14 +31,15 @@ public class ActivityRepository {
 
     public void createNewActivity(Activity activity) {
         String sql = "INSERT INTO activities (activityID,activityName, ageLimit, heightLimit, timeLimit, isWithAdult, description) VALUES(?,?,?,?,?,?,?)";
-        template.update(sql,
-                activity.getActivityID(),
-                activity.getActivityName(),
-                activity.getAgeLimit(),
-                activity.getHeightLimit(),
-                activity.getTimeLimit(),
-                activity.isWithAdult(),
-                activity.getDescription());
+            template.update(sql,
+                    activity.getActivityID(),
+                    activity.getActivityName(),
+                    activity.getAgeLimit(),
+                    activity.getHeightLimit(),
+                    activity.getTimeLimit(),
+                    activity.isWithAdult(),
+                    activity.getDescription());
+
         System.out.println("This is repository");
         //int activityID, String activityName, int ageLimit, int minimumHeight, boolean isWithAdult
     }
