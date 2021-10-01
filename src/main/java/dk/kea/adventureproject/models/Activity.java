@@ -11,12 +11,12 @@ public class Activity {
     private int heightLimit;
     private int timeLimit;
     private String description;
-    private boolean isWithAdult;
+    private String isWithAdult;
 
     public Activity() {
     }
 
-    public Activity(int activityID, String activityName, int ageLimit, int heightLimit, int timeLimit, String description, boolean isWithAdult) {
+    public Activity(int activityID, String activityName, int ageLimit, int heightLimit, int timeLimit, String description, String isWithAdult) {
         this.activityID = activityID;
         this.activityName = activityName;
         this.ageLimit = ageLimit;
@@ -65,14 +65,13 @@ public class Activity {
 
     public void setTimeLimit(int timeLimit) {
         this.timeLimit = timeLimit;
-        this.heightLimit = heightLimit;
     }
 
-    public boolean isWithAdult() {
+    public String isWithAdult() {
         return isWithAdult;
     }
 
-    public void setWithAdult(boolean withAdult) {
+    public void setWithAdult(String withAdult) {
         isWithAdult = withAdult;
     }
 

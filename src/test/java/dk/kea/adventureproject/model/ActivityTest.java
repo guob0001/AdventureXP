@@ -12,19 +12,17 @@ public class ActivityTest {
      * @author Christian
      */
 
-  /*  @Test
+    @Test
     void Activity() {
 
-        Activity activity = new Activity(1, "Sumo", 18,150, 100, true, "Socks");
+        Activity activity = new Activity(1, "Sumo", 18, 150, 100, "Socks", "Ja");
 
         assertEquals(18, activity.getAgeLimit());
         assertEquals(150, activity.getHeightLimit());
         assertEquals(1, activity.getActivityID());
         assertEquals("Sumo", activity.getActivityName());
         assertEquals(100, activity.getTimeLimit());
-        assertTrue(activity.isWithAdult());
+        assertEquals("Ja", activity.isWithAdult());
         assertEquals("Socks", activity.getDescription());
     }
-
-   */
 }
