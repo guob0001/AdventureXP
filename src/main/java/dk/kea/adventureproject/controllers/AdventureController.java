@@ -26,7 +26,7 @@ public class AdventureController {
 
     @GetMapping("/createActivity")
     public String createActivity() {
-        return "createActivity.html";
+        return "/createActivity";
     }
 
     @PostMapping("/createActivity")
