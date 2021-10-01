@@ -1,4 +1,4 @@
-package dk.kea.adventureproject.model;
+package dk.kea.adventureproject.models;
 
 import dk.kea.adventureproject.models.Activity;
 import org.junit.jupiter.api.Test;

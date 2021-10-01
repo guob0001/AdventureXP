@@ -8,8 +8,10 @@ import java.util.List;
 
 @Service
 public class ActivityService {
+
     @Autowired
     ActivityRepository activityRepository;
+
     /*
     Service skaber forbindelse til Repo, og gør at vi kan bruge metoderne i Repo klasse(r) */
     //Author Guobin Bruges til at kalde på ActivtyRepositorys "updateActivity" klasse, og opdaterer den activity med det pågældende ID
@@ -21,6 +23,7 @@ public class ActivityService {
     public List<Activity> readAllActivities(){
         return activityRepository.readAllActivities();
     }
+
     //Viser én aktivitet ud fra ID
     public Activity readActivityByID(int activityID) {
         return activityRepository.readActivityByID(activityID);
