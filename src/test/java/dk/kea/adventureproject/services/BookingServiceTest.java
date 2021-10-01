@@ -17,7 +17,7 @@ class BookingServiceTest {
     @Autowired
     BookingRepository bookingRepository;
 
-    Booking booking = new Booking(1, 2, "Ivan", "Bodil", 22222222, "2021-06-12", "13");
+    Booking booking = new Booking(1, 2, "Hans", "Jørgen", 22222222, "2021-06-12", "13");
 
     @Test
     void updateBooking() {
