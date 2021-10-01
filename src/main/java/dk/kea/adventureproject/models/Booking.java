@@ -7,6 +7,7 @@ import java.util.Date;
 
 public class Booking {
     private int bookingId;
+    private int activityID;
     private String employeeName;
     private String customerName;
     private int customerTelephone;
@@ -17,8 +18,10 @@ public class Booking {
 
     }
 
-    public Booking(int bookingId, String employeeName, String customerName, int customerTelephone, String startDate, String timeStart) {
+
+    public Booking(int bookingId, int activityID, String employeeName, String customerName, int customerTelephone, String startDate, String timeStart) {
         this.bookingId = bookingId;
+        this.activityID = activityID;
         this.employeeName = employeeName;
         this.customerName = customerName;
         this.customerTelephone = customerTelephone;
@@ -32,6 +35,14 @@ public class Booking {
 
     public void setBookingId(int bookingId) {
         this.bookingId = bookingId;
+    }
+
+    public int getActivityID() {
+        return activityID;
+    }
+
+    public void setActivityID(int activityID) {
+        this.activityID = activityID;
     }
 
     public String getEmployeeName() {

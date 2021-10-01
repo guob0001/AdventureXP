@@ -61,8 +61,8 @@ public class ActivityRepository {
                 activity.getAgeLimit(),
                 activity.getHeightLimit(),
                 activity.getTimeLimit(),
-                activity.isWithAdult());
-                activity.getDescription();
+                activity.isWithAdult(),
+                activity.getDescription());
     }
 
     public void deleteActivity(int activityID) {

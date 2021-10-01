@@ -7,11 +7,7 @@ import dk.kea.adventureproject.services.BookingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -46,19 +42,21 @@ public class BookingController {
     @GetMapping("/updateBooking/{bookingID}")
     public String updateBooking(@PathVariable int bookingID, Model model) {
         model.addAttribute("booking", bookingService.findBookingById(bookingID));
-        return "updateBooking";
+        return "/updateBooking";
     }
 
     @PostMapping("/updateBooking")
     public String updateBooking(@ModelAttribute Booking booking) {
         bookingService.updateBooking(booking);
-        return "redirect:/bookingIndex";
+        return "redirect:/searchBooking";
     }
 
 
     @GetMapping("/searchBooking")
-    public String searchBooking() {
-        return "/searchBooking";
+    public String searchBooking(Model model) {
+        List<SearchBooking> bookingList = bookingService.searchBooking("","","","","","", "","","");
+        model.addAttribute("bookingList", bookingList);
+      return "/searchBooking";
     }
 
     @PostMapping("/searchBooking")
@@ -78,4 +76,9 @@ public class BookingController {
     return "/searchBooking";
     }
 
+    @GetMapping("/deleteBooking/{bookingID}")
+    public String deleteActivity(@PathVariable("bookingID") int bookingID) {
+        bookingService.deleteBooking(bookingID);
+        return "redirect:/searchBooking";
+    }
 }

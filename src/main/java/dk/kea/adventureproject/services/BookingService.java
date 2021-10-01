@@ -42,4 +42,7 @@ public class BookingService {
     /*Øpublic Booking readBookingById(int bookingId) {
         return bookingRepository.readBookingById(bookingId);
     }*/
+    public void deleteBooking(int bookingId){
+        bookingRepository.deleteBooking(bookingId);
+    }
 }
