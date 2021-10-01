@@ -41,32 +41,50 @@
             <h2 class="section-heading text-uppercase">Opret Aktivitet</h2>
             <h3 class="section-subheading text-muted">Udfyld felterne for den pågældende aktivitet.</h3>
         </div>
-        <form>
+        <form class="form" id="activitycreation" onsubmit="return createActivity()" action="/createActivity"
+              method="POST">
+            <input hidden name="activityID" value="0">
             <div class="form-group">
                 <label for="formGroupExampleInput">Aktivitet</label>
-                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Indtast aktivitetsnavn">
+                <input type="text" name="activityName" class="form-control" id="formGroupExampleInput"
+                       placeholder="Indtast aktivitetsnavn"
+                       required>
+            </div>
+            <div class="form-group">
+                <label for="formGroupExampleInput5">Beskrivelse af Aktivitet</label>
+                <input type="text" name="description" class="form-control" id="formGroupExampleInput5"
+                       placeholder="Beksrivelse" required>
             </div>
             <div class="form-group">
                 <label for="formGroupExampleInput2">Aldersgrænse</label>
-                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Indtast aldersgrænse">
+                <input type="text" name="ageLimit" class="form-control" id="formGroupExampleInput2"
+                       placeholder="Indtast aldersgrænse"
+                       required>
             </div>
             <div class="form-group">
                 <label for="formGroupExampleInput3">Højdekrav</label>
-                <input type="text" class="form-control" id="formGroupExampleInput3" placeholder="Indtast højdekrav">
+                <input type="text" name="heightLimit" class="form-control" id="formGroupExampleInput3"
+                       placeholder="Indtast højdekrav"
+                       required>
             </div>
             <div class="form-group">
                 <label for="formGroupExampleInput4">Tidsgrænse</label>
-                <input type="text" class="form-control" id="formGroupExampleInput4" placeholder="Indtast tidsgrænse">
+                <input type="text" name="timeLimit" class="form-control" id="formGroupExampleInput4"
+                       placeholder="Indtast tidsgrænse"
+                       required>
             </div>
-            <div class="form-group">
-                <label for="formGroupExampleInput5">Med forælder</label>
-                <input type="text" class="form-control" id="formGroupExampleInput5"
-                       placeholder="Skal forælder medfølge?">
+            <div>
+                <label>Kræves der voksen?</label><br>
+                <input type="checkbox" name="isWithAdult" placeholder="Vælg her">
+
             </div>
+            <br>
+            <button type="submit" class="btn btn-primary" style="margin-right: 10px">
+                <a class="theButtons">Opret</a></button>
+            <button type="reset" class="btn btn-primary" style="margin-right: 10px">
+                <a class="theButtons">Fortryd</a></button>
         </form>
-        <br>
-        <button type="button" class="btn btn-primary" style="margin-right: 10px"><a class="theButtons"
-                                                                                    href="#">Opret</a></button>
+
 
         <!-- Footer-->
         <footer class="footer py-4">

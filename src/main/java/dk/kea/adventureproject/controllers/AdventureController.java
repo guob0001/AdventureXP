@@ -26,15 +26,13 @@ public class AdventureController {
 
     @GetMapping("/createActivity")
     public String createActivity() {
-        return "/createActivity";
+        return "createActivity.html";
     }
 
     @PostMapping("/createActivity")
-    public String createActivity(@ModelAttribute Activity activity, Model model) {
+    public String createActivity(@ModelAttribute Activity activity) {
         activityService.createNewActivity(activity);
-        List<Activity> activityList = activityService.readAllActivities();
-        model.addAttribute("activities", activityList);
-        return "index.html";
+        return "redirect:/";
     }
 
     @GetMapping("/updateActivity/{activityID}")

@@ -34,6 +34,7 @@ public class ActivityService {
     //Author Guobin opretter ny activity
     public void createNewActivity(Activity activity){
         activityRepository.createNewActivity(activity);
+        System.out.println("This is Service");
     }
 
 }

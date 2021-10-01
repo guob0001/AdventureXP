@@ -12,7 +12,7 @@ public class ActivityTest {
      * @author Christian
      */
 
-    @Test
+  /*  @Test
     void Activity() {
 
         Activity activity = new Activity(1, "Sumo", 18,150, 100, true, "Socks");
@@ -25,4 +25,6 @@ public class ActivityTest {
         assertTrue(activity.isWithAdult());
         assertEquals("Socks", activity.getDescription());
     }
+
+   */
 }

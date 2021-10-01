@@ -29,14 +29,15 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                <li class="nav-item"><a class="nav-link" href="/">Forside</a></li>
+                <li class="nav-item"><a class="nav-link" href="#page-top">Forside</a></li>
+                <li class="nav-item"><a class="nav-link" href="#portfolio">Aktiviteter</a></li>
                 <li class="nav-item"><a class="nav-link" href="/searchBooking">Bookings</a></li>
             </ul>
         </div>
     </div>
 </nav>
 <!-- Masthead-->
-<header class="masthead" style="height: 400px">
+<header class="masthead">
     <div class="container">
         <div class="masthead-heading text-uppercase">Adventure XP</div>
         <div class="masthead-subheading">Klar til et adrenalin-rush?</div>
@@ -60,8 +61,6 @@
                 <th scope="col">Højdekrav</th>
                 <th scope="col">Tidsgrænse</th>
                 <th scope="col">Med forælder</th>
-                <th scope="col">Rediger</th>
-                <th scope="col">Slet</th>
             </tr>
             </thead>
             <tbody>
@@ -72,21 +71,12 @@
                 <td th:text="${activities.getHeightLimit}"> HeightLimit</td>
                 <td th:test="${activities.getTimeLimit}"></td>
                 <td th:text="${activities.isWithAdult}"></td>
-                <td>
-                    <a>
-                        <button type="button" class="btn btn-primary"  style="margin-right: 10px">Rediger aktivitet</button>
-                    </a>
-                </td>
-                <td>
-                    <a>
-                        <button type="button" class="btn btn-primary"  style="margin-right: 10px">Slet aktivitet</button>
-                    </a>
-                </td>
             </tr>
             </tbody>
         </table>
-        <a th:href="@{/createActivity}">
-        <button type="button" class="btn btn-primary"  style="margin-right: 10px">Tilføj aktivitet</button>
+        <a href="/createActivity">
+            <button type="button" class="btn btn-primary" style="margin-right: 10px">Tilføj aktivitet
+            </button>
         </a>
     </div>
 </section>
