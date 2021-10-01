@@ -41,7 +41,8 @@ public class BookingRepository {
     }
 
     public void updateBooking(Booking booking) {
-        String updateSql = "UPDATE booking SET activityID = ?, employeeName = ?, customerName = ?, customerTelephone = ?, startDate = ?, timeStart = ?";
+        String updateSql = "UPDATE booking SET activityID = ?, employeeName = ?, customerName = ?, customerTelephone = ?, startDate = ?, timeStart = ? " +
+                "WHERE " + booking.getBookingId();
         template.update(updateSql,
                 booking.getActivityID(),
                 booking.getEmployeeName(),

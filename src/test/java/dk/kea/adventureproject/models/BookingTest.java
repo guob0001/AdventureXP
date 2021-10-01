@@ -11,7 +11,7 @@ class BookingTest {
      * @author Joachim og Christian
      */
     @Test
-    void Booking() {
+    void booking() {
 
         Booking booking = new Booking(1, 2, "Sven Sved", "Lone Dorthe", 88888888, "1 Nov 2021", "2 Nov 2021");
 
