@@ -13,9 +13,10 @@ class BookingTest {
     @Test
     void Booking() {
 
-        Booking booking = new Booking(1, "Sven Sved", "Lone Dorthe", 88888888, "1 Nov 2021", "2 Nov 2021");
+        Booking booking = new Booking(1, 2, "Sven Sved", "Lone Dorthe", 88888888, "1 Nov 2021", "2 Nov 2021");
 
         assertEquals(1, booking.getBookingId());
+        assertEquals(2, booking.getActivityID());
         assertEquals("Sven Sved", booking.getEmployeeName());
         assertEquals("Lone Dorthe", booking.getCustomerName());
         assertEquals(88888888, booking.getCustomerTelephone());
