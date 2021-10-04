@@ -35,11 +35,16 @@ public class ProductController {
         return "/products";
     }
 
+    /**
+     * @author Joachim & Christian
+     */
     @GetMapping("/createProduct")
     public String createProduct() {
         return "/createProduct";
     }
-
+    /**
+     * @author Joachim & Christian
+     */
     @PostMapping("/createProduct")
     public String createProduct(@ModelAttribute Product product) {
         productService.createProduct(product);
