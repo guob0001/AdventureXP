@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
@@ -7,20 +7,21 @@
     <meta name="author" content=""/>
     <title>Adventure XP - Forside</title>
     <!-- Favicon-->
-    <link rel="icon" type="image/x-icon" href="/assets/img/adventure-logo.svg"/>
+    <link rel="icon" type="image/x-icon" href="assets/img/adventure-logo.svg"/>
     <!-- Font Awesome icons (free version)-->
     <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
     <!-- Google fonts-->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css"/>
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css"/>
     <!-- Core theme CSS (includes Bootstrap)-->
-    <link rel="stylesheet" th:href="@{css/styles.css}">
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
 </head>
 <body id="page-top">
 <!-- Navigation-->
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
     <div class="container">
-        <a class="navbar-brand" href="/"><img src="/assets/img/adventure-logo.svg" alt="..." style="height: 100px;"/></a>
+        <a class="navbar-brand" href="/"><img src="assets/img/adventure-logo.svg" alt="..."
+                                              style="height: 100px;"/></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
                 aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             Menu
@@ -29,60 +30,51 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
                 <li class="nav-item"><a class="nav-link" href="/">Forside</a></li>
+                <li class="nav-item"><a class="nav-link" href="/searchBooking">Bookings</a></li>
             </ul>
         </div>
     </div>
 </nav>
-<!-- Masthead-->
+
 <!-- Activity Grid-->
 <section class="page-section bg-light" id="portfolio">
     <div class="container">
         <div class="text-center">
-            <h2 class="section-heading text-uppercase">Opret Aktivitet</h2>
-            <h3 class="section-subheading text-muted">Udfyld felterne for den pågældende aktivitet.</h3>
+            <h2 class="section-heading text-uppercase">Opdater aktiviteter</h2>
+            <h3 class="section-subheading text-muted">Se, tilføj og ret i AdventureXP's aktiviteter.</h3>
         </div>
-        <form class="form" id="activitycreation" onsubmit="return createActivity()" action="/createActivity"
+        <form class="form" id="activityupdate" onsubmit="return updateActivity()" action="/updateActivity"
               method="POST">
-            <input hidden name="activityID" value="0">
+            <input type="hidden" name="activityID" th:value="${activity.activityID}">
             <div class="form-group">
                 <label for="formGroupExampleInput">Aktivitet</label>
                 <input type="text" name="activityName" class="form-control" id="formGroupExampleInput"
-                       placeholder="Indtast aktivitetsnavn"
-                       required>
+                       th:value="${activity.activityName}">
             </div>
-
             <div class="form-group">
                 <label for="formGroupExampleInput2">Aldersgrænse</label>
                 <input type="text" name="ageLimit" class="form-control" id="formGroupExampleInput2"
-                       placeholder="Indtast aldersgrænse"
-                       required>
+                       th:value="${activity.ageLimit}">
             </div>
             <div class="form-group">
                 <label for="formGroupExampleInput3">Højdekrav</label>
                 <input type="text" name="heightLimit" class="form-control" id="formGroupExampleInput3"
-                       placeholder="Indtast højdekrav"
-                       required>
+                       th:value="${activity.heightLimit}">
             </div>
             <div class="form-group">
                 <label for="formGroupExampleInput4">Tidsgrænse</label>
                 <input type="text" name="timeLimit" class="form-control" id="formGroupExampleInput4"
-                       placeholder="Indtast tidsgrænse"
-                       required>
+                       th:value="${activity.timeLimit}">
             </div>
             <div class="form-group">
-                <label for="formGroupExampleInput6">Beskrivelse af Aktivitet</label>
-                <input type="text" name="description" class="form-control" id="formGroupExampleInput6"
-                       placeholder="Beksrivelse: Fx. Kræves der forældre hvis personen er under 18'år?" required>
+                <label for="formGroupExampleInput5">Beskrivelse af Aktivitet</label>
+                <input type="text" name="description" class="form-control" id="formGroupExampleInput5"
+                       th:value="${activity.description}">
             </div>
 
-         <!--   <div class="form-group">
-                <label for="formGroupExampleInput6">Kræves der voksen?</label><br>
-                <input type="checkbox" name="isWithAdult" class="form-control" id="formGroupExampleInput6" value="ja">
-            </div>
-            -->
             <br>
             <button type="submit" class="btn btn-primary" style="margin-right: 10px">
-                <a class="theButtons">Opret</a></button>
+                <a class="theButtons">Opdater</a></button>
             <button type="reset" class="btn btn-primary" style="margin-right: 10px">
                 <a class="theButtons">Fortryd</a></button>
         </form>
@@ -117,7 +109,6 @@
 <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
 <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
-<script src="js/ButtonScript.js"></script>
 
 </body>
 </html>
