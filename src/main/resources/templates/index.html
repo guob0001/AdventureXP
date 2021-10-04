@@ -57,7 +57,7 @@
             </thead>
             <tbody>
             <tr th:each="activities :${activities}"><br>
-                <th scope="row"><a class="portfolio-link" th:href="@{/{id}(id=${activities.getActivityName})}"
+                <th scope="row"><a class="portfolio-link" th:href="@{'/activityDetails/' + ${activities.activityID}}"
                                    th:text="${activities.getActivityName}"></a></th>
                 <td th:text="${activities.getAgeLimit}"> Agelimit</td>
                 <td th:text="${activities.getHeightLimit}"> HeightLimit</td>

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <meta name="description" content=""/>
     <meta name="author" content=""/>
-    <title>Adventure XP - Booking</title>
+    <title>Adventure XP - Forside</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/img/adventure-logo.svg"/>
     <!-- Font Awesome icons (free version)-->
@@ -38,54 +38,59 @@
 <section class="page-section bg-light" id="portfolio">
     <div class="container">
         <div class="text-center">
-            <h2 class="section-heading text-uppercase">Opret Booking</h2>
-            <h3 class="section-subheading text-muted">Udfyld felterne for den pågældende booking.</h3>
+            <h2 class="section-heading text-uppercase">Opret Aktivitet</h2>
+            <h3 class="section-subheading text-muted">Udfyld felterne for den pågældende aktivitet.</h3>
         </div>
-        <form class="form" id="bookingcreation" onsubmit="return createBooking()" action="/createBooking"
-              method="POST">
-            <input hidden name="bookingId" value="0">
+        <form class="form" id="activitycreation">
+            <input hidden name="activityID" value="0">
             <div class="form-group">
-                <label for="formGroupExampleInput1">Aktivitets ID</label>
-                <input type="text" name="activityID" class="form-control" id="formGroupExampleInput1"
-                       th:value="${activityID}"
+                <label for="formGroupExampleInput">Aktivitet ID</label>
+                <input type="text" name="activityID" class="form-control" id="formGroupExampleInput"
+                       th:value="${activity.activityID}"
                        required readonly>
             </div>
             <div class="form-group">
-                <label for="formGroupExampleInput">Medarbejder</label>
-                <input type="text" name="employeeName" class="form-control" id="formGroupExampleInput"
-                       placeholder="Indtast ansvarlig medarbejder"
-                       required>
+                <label for="formGroupExampleInput1">Navn</label>
+                <input type="text" name="activityName" class="form-control" id="formGroupExampleInput1"
+                       th:value="${activity.activityName}"
+                       required readonly>
             </div>
             <div class="form-group">
-                <label for="formGroupExampleInput5">Kunde navn</label>
-                <input type="text" name="customerName" class="form-control" id="formGroupExampleInput5"
-                       placeholder="Indtast kundens fulde navn" required>
+                <label for="formGroupExampleInput2">Aldersgrænse</label>
+                <input type="text" name="ageLimit" class="form-control" id="formGroupExampleInput2"
+                       th:value="${activity.ageLimit}"
+                       required readonly>
             </div>
             <div class="form-group">
-                <label for="formGroupExampleInput2">Telefonnummer</label>
-                <input type="text" name="customerTelephone" class="form-control" id="formGroupExampleInput2"
-                       placeholder="Indtast kundens telefonnummer"
-                       required>
+                <label for="formGroupExampleInput3">Højdegrænse</label>
+                <input type="text" name="heightLimit" class="form-control" id="formGroupExampleInput3"
+                       th:value="${activity.heightLimit}"
+                       required readonly>
             </div>
             <div class="form-group">
-                <label for="formGroupExampleInput3">Dato</label>
-                <input type="text" name="startDate" class="form-control" id="formGroupExampleInput3"
-                       placeholder="Indtast dato"
-                       required>
+                <label for="formGroupExampleInput4">Varighed</label>
+                <input type="text" name="timeLimit" class="form-control" id="formGroupExampleInput4"
+                       th:value="${activity.timeLimit}"
+                       required readonly>
             </div>
             <div class="form-group">
-                <label for="formGroupExampleInput4">Tid</label>
-                <input type="text" name="timeStart" class="form-control" id="formGroupExampleInput4"
-                       placeholder="Indtast tidspunkt for booking"
-                       required>
+                <label for="formGroupExampleInput5">Beskrivelse af aktivitet</label>
+                <input type="text" name="description" class="form-control" id="formGroupExampleInput5"
+                       th:value="${activity.description}"
+                       required readonly>
             </div>
 
+            <!--   <div class="form-group">
+                   <label for="formGroupExampleInput6">Kræves der voksen?</label><br>
+                   <input type="checkbox" name="isWithAdult" class="form-control" id="formGroupExampleInput6" value="ja">
+               </div>
+               -->
             <br>
-            <button type="submit" class="btn btn-primary" style="margin-right: 10px">
-                <a class="theButtons">Opret</a></button>
-            <button type="reset" class="btn btn-primary" style="margin-right: 10px">
-                <a class="theButtons">Fortryd</a></button>
+
         </form>
+        <a class="theButtons" th:href="@{'/createBookingByID/' + ${activity.activityID}}">
+            <button class="btn btn-primary" style="margin-right: 10px">Opret booking</button>
+        </a>
 
 
         <!-- Footer-->
@@ -117,6 +122,7 @@
 <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
 <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+<script src="js/ButtonScript.js"></script>
 
 </body>
 </html>

@@ -25,12 +25,20 @@ public class BookingController {
         return "createBooking.html";
     }
 
+    @GetMapping("/createBookingByID/{activityID}")
+    public String createBookingByID(@PathVariable int activityID, Model model){
+        model.addAttribute("activityID", activityID);
+        System.out.println(activityID);
+        return "/createBooking";
+    }
+
     @PostMapping("/createBooking")
     public String createBooking(@ModelAttribute Booking booking, Model model) {
+        System.out.println(booking.getActivityID());
         bookingService.createNewBooking(booking);
         List<Booking> bookingList = bookingService.readAllBookings();
         model.addAttribute("booking", bookingList);
-        return "createBooking.html";
+        return "redirect:/";
     }
 
     /**
@@ -47,7 +55,6 @@ public class BookingController {
 
     @PostMapping("/updateBooking")
     public String updateBooking(@ModelAttribute Booking booking) {
-        System.out.println(booking.getBookingId());
         bookingService.updateBooking(booking);
         return "redirect:/searchBooking";
     }

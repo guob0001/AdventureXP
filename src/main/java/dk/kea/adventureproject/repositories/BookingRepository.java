@@ -18,9 +18,9 @@ public class BookingRepository {
     JdbcTemplate template;
 
     public void createNewBooking(Booking booking) {
-        String sql = "INSERT INTO booking (bookingId, employeeName, customerName, customerTelephone, startDate, timeStart) VALUES(?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO booking (activityID, employeeName, customerName, customerTelephone, startDate, timeStart) VALUES(?, ?, ?, ?, ?, ?)";
         template.update(sql,
-                booking.getBookingId(),
+                booking.getActivityID(),
                 booking.getEmployeeName(),
                 booking.getCustomerName(),
                 booking.getCustomerTelephone(),
