@@ -2,6 +2,10 @@ package dk.kea.adventureproject.repositories;
 
 import dk.kea.adventureproject.models.Product;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+
+import dk.kea.adventureproject.models.Product;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
@@ -9,12 +13,24 @@ import org.springframework.jdbc.core.RowMapper;
 import java.util.List;
 
 /**
- * @author Julius Panduro
+ * @author Joachim & Christian
  */
 public class ProductRepository {
+
     @Autowired
     JdbcTemplate template;
-    //Template for ProductRepository
+
+    /**
+     * @author Joachim og Christian
+     */
+
+    public void createProduct(Product product) {
+        String sql = "INSERT INTO products (productId, productName, productPrice) VALUES (?, ?, ?)";
+        template.update(sql,
+                product.getProductId(),
+                product.getProductName(),
+                product.getProductPrice());
+    }
 
     public List<Product> fetchAll(){
         String sql = "SELECT * FROM products";

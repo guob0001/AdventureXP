@@ -4,15 +4,27 @@ import dk.kea.adventureproject.models.Product;
 import dk.kea.adventureproject.repositories.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import dk.kea.adventureproject.models.Product;
+import dk.kea.adventureproject.repositories.ProductRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+
 import java.util.List;
 
 /**
- * @author Julius Panduro
+ * @author Joachim og Christian
  */
 public class ProductService {
+
     @Autowired
     ProductRepository productRepository;
-    //Template for ProductService
+
+    /**
+     * @author Joachim og Christian
+     */
+
+    public void createProduct(Product product) {
+        productRepository.createProduct(product);
+    }
 
     public List<Product> fetchAll(){
         return productRepository.fetchAll();
