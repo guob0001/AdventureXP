@@ -17,4 +17,7 @@ public class ProductService {
     public List<Product> fetchAll(){
         return productRepository.fetchAll();
     }
+    public void deleteProduct(int productID){
+        productRepository.deleteProduct(productID);
+    }
 }

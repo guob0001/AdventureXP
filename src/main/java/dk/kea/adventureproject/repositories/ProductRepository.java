@@ -21,4 +21,8 @@ public class ProductRepository {
         RowMapper<Product> rowMapper = new BeanPropertyRowMapper<>(Product.class);
         return template.query(sql, rowMapper);
     }
+    public void deleteProduct(int productID) {
+        String sql = "DELETE FROM booking WHERE productID = ?";
+        template.update(sql, productID);
+    }
 }
