@@ -14,7 +14,7 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css"/>
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css"/>
     <!-- Core theme CSS (includes Bootstrap)-->
-    <link rel="stylesheet" th:href="@{css/styles.css}">
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
 </head>
 <body id="page-top">
 <!-- Navigation-->
@@ -44,7 +44,12 @@
         <form class="form" id="bookingcreation" onsubmit="return createBooking()" action="/createBooking"
               method="POST">
             <input hidden name="bookingId" value="0">
-            <input hidden name="activityID" value="0">
+            <div class="form-group">
+                <label for="formGroupExampleInput1">Aktivitets ID</label>
+                <input type="text" name="activityID" class="form-control" id="formGroupExampleInput1"
+                       th:value="${activityID}"
+                       required readonly>
+            </div>
             <div class="form-group">
                 <label for="formGroupExampleInput">Medarbejder</label>
                 <input type="text" name="employeeName" class="form-control" id="formGroupExampleInput"

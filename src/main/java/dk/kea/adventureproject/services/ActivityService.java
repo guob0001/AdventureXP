@@ -15,8 +15,8 @@ public class ActivityService {
     /*
     Service skaber forbindelse til Repo, og gør at vi kan bruge metoderne i Repo klasse(r) */
     //Author Guobin Bruges til at kalde på ActivtyRepositorys "updateActivity" klasse, og opdaterer den activity med det pågældende ID
-    public void updateActivity(Activity activity){
-        activityRepository.updateActivity(activity);
+    public void updateActivity(int activityID, Activity activity){
+        activityRepository.updateActivity(activityID, activity);
     }
 
     //Author Guobin Får fremvist alle activities.

@@ -45,16 +45,11 @@
         </div>
         <form class="form" id="activityupdate" onsubmit="return updateActivity()" action="/updateActivity"
               method="POST">
-            <input hidden name="activityID" value="0">
-            <div class="form-group">
+            <input type="hidden" name="activityID" th:value="${activity.activityID}">
+           <div class="form-group">
                 <label for="formGroupExampleInput">Aktivitet</label>
                 <input type="text" name="activityName" class="form-control" id="formGroupExampleInput"
                        th:value="${activity.activityName}">
-            </div>
-            <div class="form-group">
-                <label for="formGroupExampleInput5">Beskrivelse af Aktivitet</label>
-                <input type="text" name="description" class="form-control" id="formGroupExampleInput5"
-                       th:value="${activity.description}">
             </div>
             <div class="form-group">
                 <label for="formGroupExampleInput2">Aldersgrænse</label>
@@ -71,14 +66,15 @@
                 <input type="text" name="timeLimit" class="form-control" id="formGroupExampleInput4"
                        th:value="${activity.timeLimit}">
             </div>
-            <div>
-                <label>Kræves der voksen?</label><br>
-                <input type="checkbox" name="isWithAdult" th:value="${activity.withAdult}">
-
+            <div class="form-group">
+                <label for="formGroupExampleInput5">Beskrivelse af Aktivitet</label>
+                <input type="text" name="description" class="form-control" id="formGroupExampleInput5"
+                       th:value="${activity.description}">
             </div>
+
             <br>
             <button type="submit" class="btn btn-primary" style="margin-right: 10px">
-                <a class="theButtons">Opret</a></button>
+                <a class="theButtons">Opdater</a></button>
             <button type="reset" class="btn btn-primary" style="margin-right: 10px">
                 <a class="theButtons">Fortryd</a></button>
         </form>

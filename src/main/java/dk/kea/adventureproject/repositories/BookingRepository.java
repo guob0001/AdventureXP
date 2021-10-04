@@ -18,9 +18,9 @@ public class BookingRepository {
     JdbcTemplate template;
 
     public void createNewBooking(Booking booking) {
-        String sql = "INSERT INTO booking (bookingId, employeeName, customerName, customerTelephone, startDate, timeStart) VALUES(?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO booking (activityID, employeeName, customerName, customerTelephone, startDate, timeStart) VALUES(?, ?, ?, ?, ?, ?)";
         template.update(sql,
-                booking.getBookingId(),
+                booking.getActivityID(),
                 booking.getEmployeeName(),
                 booking.getCustomerName(),
                 booking.getCustomerTelephone(),
@@ -41,14 +41,15 @@ public class BookingRepository {
     }
 
     public void updateBooking(Booking booking) {
-        String updateSql = "UPDATE booking SET activityID = ?, employeeName = ?, customerName = ?, customerTelephone = ?, startDate = ?, timeStart = ?";
+        String updateSql = "UPDATE booking SET activityID = ?, employeeName = ?, customerName = ?, customerTelephone = ?, startDate = ?, timeStart = ? WHERE bookingID = ?";
         template.update(updateSql,
                 booking.getActivityID(),
                 booking.getEmployeeName(),
                 booking.getCustomerName(),
                 booking.getCustomerTelephone(),
                 booking.getStartDate(),
-                booking.getTimeStart());
+                booking.getTimeStart(),
+                booking.getBookingId());
     }
 
     public List<SearchBooking> searchBooking(String BookingID, String activityID,

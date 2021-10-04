@@ -8,7 +8,6 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
-import java.sql.SQLException;
 import java.util.List;
 
 /**
@@ -30,16 +29,14 @@ public class ActivityRepository {
     JdbcTemplate template;
 
     public void createNewActivity(Activity activity) {
-        String sql = "INSERT INTO activities (activityID,activityName, ageLimit, heightLimit, timeLimit, isWithAdult, description) VALUES(?,?,?,?,?,?,?)";
-            template.update(sql,
-                    activity.getActivityID(),
-                    activity.getActivityName(),
-                    activity.getAgeLimit(),
-                    activity.getHeightLimit(),
-                    activity.getTimeLimit(),
-                    activity.isWithAdult(),
-                    activity.getDescription());
-
+        String sql = "INSERT INTO activities (activityID, activityName, ageLimit, heightLimit, timeLimit, description) VALUES(?,?,?,?,?,?)";
+        template.update(sql,
+                activity.getActivityID(),
+                activity.getActivityName(),
+                activity.getAgeLimit(),
+                activity.getHeightLimit(),
+                activity.getTimeLimit(),
+                activity.getDescription());
         System.out.println("This is repository");
         //int activityID, String activityName, int ageLimit, int minimumHeight, boolean isWithAdult
     }
@@ -56,15 +53,15 @@ public class ActivityRepository {
         return template.queryForObject(sql, rowMapper, activityID);
     }
 
-    public void updateActivity(Activity activity) {
-        String sql = "UPDATE activities SET activityName = ?, ageLimit = ?, heightLimit = ?, timeLimit = ?, isWithAdult = ?, description = ?";
+    public void updateActivity(int activityID, Activity activity) {
+        String sql = "UPDATE activities SET activityName = ?, ageLimit = ?, heightLimit = ?, timeLimit = ?, description = ? WHERE activityID = ?";
         template.update(sql,
                 activity.getActivityName(),
                 activity.getAgeLimit(),
                 activity.getHeightLimit(),
                 activity.getTimeLimit(),
-                activity.isWithAdult(),
-                activity.getDescription());
+                activity.getDescription(),
+                activityID);
     }
 
     public void deleteActivity(int activityID) {

@@ -24,6 +24,12 @@ public class AdventureController {
         return "index.html";
     }
 
+    @GetMapping("/activityDetails/{activityID}")
+    public String readActivityDetails(@PathVariable int activityID, Model model){
+        model.addAttribute("activity", activityService.readActivityByID(activityID));
+        return "/activityDetails";
+    }
+
     @GetMapping("/createActivity")
     public String createActivity() {
         return "/createActivity";
@@ -43,7 +49,7 @@ public class AdventureController {
 
     @PostMapping("/updateActivity")
     public String updateActivity(@ModelAttribute Activity activity) {
-        activityService.updateActivity(activity);
+        activityService.updateActivity(activity.getActivityID(), activity);
         return "redirect:/";
     }
 
