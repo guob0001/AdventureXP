@@ -21,4 +21,13 @@ public class ProductRepository {
         RowMapper<Product> rowMapper = new BeanPropertyRowMapper<>(Product.class);
         return template.query(sql, rowMapper);
     }
+
+    //Frederik
+    public void updateProduct(int productID, Product product) {
+        String sql = "UPDATE products SET productName = ?, productPrice = ? WHERE productID = ?";
+        template.update(sql,
+                product.getProductName(),
+                product.getProductPrice(),
+                productID);
+    }
 }

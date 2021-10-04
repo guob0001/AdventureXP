@@ -43,33 +43,18 @@
             <h2 class="section-heading text-uppercase">Opdater aktiviteter</h2>
             <h3 class="section-subheading text-muted">Se, tilføj og ret i AdventureXP's aktiviteter.</h3>
         </div>
-        <form class="form" id="activityupdate" onsubmit="return updateActivity()" action="/updateActivity"
+        <form class="form" id="productupdate" onsubmit="return updateProduct()" action="/updateProduct"
               method="POST">
-            <input type="hidden" name="activityID" th:value="${activity.activityID}">
+            <input type="hidden" name="productID" th:value="${product.productID}">
             <div class="form-group">
                 <label for="formGroupExampleInput">Aktivitet</label>
-                <input type="text" name="activityName" class="form-control" id="formGroupExampleInput"
-                       th:value="${activity.activityName}">
+                <input type="text" name="productName" class="form-control" id="formGroupExampleInput"
+                       th:value="${product.productName}">
             </div>
             <div class="form-group">
                 <label for="formGroupExampleInput2">Aldersgrænse</label>
-                <input type="text" name="ageLimit" class="form-control" id="formGroupExampleInput2"
-                       th:value="${activity.ageLimit}">
-            </div>
-            <div class="form-group">
-                <label for="formGroupExampleInput3">Højdekrav</label>
-                <input type="text" name="heightLimit" class="form-control" id="formGroupExampleInput3"
-                       th:value="${activity.heightLimit}">
-            </div>
-            <div class="form-group">
-                <label for="formGroupExampleInput4">Tidsgrænse</label>
-                <input type="text" name="timeLimit" class="form-control" id="formGroupExampleInput4"
-                       th:value="${activity.timeLimit}">
-            </div>
-            <div class="form-group">
-                <label for="formGroupExampleInput5">Beskrivelse af Aktivitet</label>
-                <input type="text" name="description" class="form-control" id="formGroupExampleInput5"
-                       th:value="${activity.description}">
+                <input type="text" name="productPrice" class="form-control" id="formGroupExampleInput2"
+                       th:value="${product.productPrice}">
             </div>
 
             <br>

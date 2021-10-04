@@ -17,4 +17,9 @@ public class ProductService {
     public List<Product> fetchAll(){
         return productRepository.fetchAll();
     }
+
+    //Frederik
+    public void updateProduct(int productID, Product product){
+        productRepository.updateProduct(productID, product);
+    }
 }
