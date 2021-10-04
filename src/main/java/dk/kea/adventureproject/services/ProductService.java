@@ -7,12 +7,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import dk.kea.adventureproject.models.Product;
 import dk.kea.adventureproject.repositories.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 /**
  * @author Joachim og Christian
  */
+@Service
 public class ProductService {
 
     @Autowired

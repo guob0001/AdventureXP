@@ -28,6 +28,12 @@ public class ProductController {
     @Autowired
     ProductService productService;
 
+    @GetMapping("/products")
+    public String fetchAll(Model model){
+        List<Product> productList = productService.fetchAll();
+        model.addAttribute("products", productList);
+        return "/products";
+    }
 
     @GetMapping("/createProduct")
     public String createProduct() {
@@ -41,11 +47,11 @@ public class ProductController {
     }
 
     //Frederik
-    @GetMapping("/updateProduct/{productID}")
+    /*@GetMapping("/updateProduct/{productID}")
     public String updateProduct(@PathVariable("productID") int productID, Model model) {
         model.addAttribute("product", productService.readProductByID(productID));
         return "/updateActivity";
-    }
+    }*/
 
     //Frederik
     @PostMapping("updateProduct")
