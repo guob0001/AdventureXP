@@ -25,9 +25,9 @@ public class ProductRepository {
      */
 
     public void createProduct(Product product) {
-        String sql = "INSERT INTO products (productId, productName, productPrice) VALUES (?, ?, ?)";
+        String sql = "INSERT INTO products (productID, productName, productPrice) VALUES (?, ?, ?)";
         template.update(sql,
-                product.getProductId(),
+                product.getProductID(),
                 product.getProductName(),
                 product.getProductPrice());
     }

@@ -5,25 +5,25 @@ package dk.kea.adventureproject.models;
  */
 public class Product {
 
-    private int productId;
+    private int productID;
     private String productName;
     private double productPrice;
 
     public Product() {
     }
 
-    public Product(int productId, String productName, double productPrice) {
-        this.productId = productId;
+    public Product(int productID, String productName, double productPrice) {
+        this.productID = productID;
         this.productName = productName;
         this.productPrice = productPrice;
     }
 
-    public int getProductId() {
-        return productId;
+    public int getProductID() {
+        return productID;
     }
 
-    public void setProductId(int productId) {
-        this.productId = productId;
+    public void setProductID(int productID) {
+        this.productID = productID;
     }
 
     public String getProductName() {

@@ -39,8 +39,6 @@ public class ProductController {
         productService.createProduct(product);
         return "redirect:/product";
     }
-    @Autowired
-    ProductService productService;
 
     //Frederik
     @GetMapping("/updateProduct/{productID}")
