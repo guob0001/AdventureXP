@@ -53,7 +53,9 @@ public class BookingRepository {
     }
 
     public List<SearchBooking> searchBooking(String BookingID, String activityID,
-     String activityName, String employeeName, String customerName, String customerPhoneNumber, String startDate, String dateFrom, String dateTo) {
+     String activityName, String employeeName, String customerName,
+                                             String customerPhoneNumber,
+                                             String startDate, String dateFrom, String dateTo) {
         String sql = "CALL searchBooking (?, ?, ?, ?, ?, ?, ?, ?, ?)";
         RowMapper rowMapper = new BeanPropertyRowMapper(SearchBooking.class);
         return template.query(sql, rowMapper, BookingID, activityID,

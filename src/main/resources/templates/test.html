@@ -1,6 +1,24 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head th:replace="templates/head.html(customCSS='style.css')"></head>
+<header>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("button").click(function () {
+            var name = $("input:text").val();
+            document.getElementById("showName").innerHTML = name;
+        });
+    });
+</script>
+
+
+<p>Indtast navn på dagens medarbejder:
+    <input type="text" name="employee" value="Navn">
+</p>
+<button>Enter</button>
+<p id="showName"></p>
+</header>
 <body>
 <h1>THIS PAGE IS FOR THYMELEAF & HTML
     <TESTIN></TESTIN>
