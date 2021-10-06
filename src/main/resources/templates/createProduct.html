@@ -4,40 +4,41 @@
 <link rel="stylesheet" th:href="@{css/styles.css}">
 <header th:replace="fragments/header.html"></header>
 
-<body id="page-top">
-
-
 <!-- Activity Grid-->
+<body id="page-top">
 <section class="page-section bg-light" id="portfolio">
     <div class="container">
         <div class="text-center">
-            <h2 class="section-heading text-uppercase">Opdater aktiviteter</h2>
-            <h3 class="section-subheading text-muted">Se, tilføj og ret i AdventureXP's aktiviteter.</h3>
+            <h2 class="section-heading text-uppercase">Opret Produkt</h2>
+            <h3 class="section-subheading text-muted">Udfyld felterne for det pågældende produkt.</h3>
         </div>
-        <form class="form" id="productupdate" onsubmit="return updateProduct()" action="/updateProduct"
-              method="POST">
-            <input type="hidden" name="productID" th:value="${product.productID}">
+        <form class="form" action="/createProduct" method="POST">
+            <input hidden name="productID" value="0">
             <div class="form-group">
-                <label for="formGroupExampleInput">Aktivitet</label>
+                <label for="formGroupExampleInput">Produkt</label>
                 <input type="text" name="productName" class="form-control" id="formGroupExampleInput"
-                       th:value="${product.productName}">
+                       placeholder="Indtast produktets navn" required>
             </div>
+
             <div class="form-group">
-                <label for="formGroupExampleInput2">Aldersgrænse</label>
+                <label for="formGroupExampleInput2">Produkt pris</label>
                 <input type="text" name="productPrice" class="form-control" id="formGroupExampleInput2"
-                       th:value="${product.productPrice}">
+                       placeholder="Indtast produktets pris"
+                       required>
             </div>
 
             <br>
             <button type="submit" class="btn btn-primary" style="margin-right: 10px">
-                <a class="theButtons">Opdater</a></button>
+                <a class="theButtons">Opret</a></button>
             <button type="reset" class="btn btn-primary" style="margin-right: 10px">
                 <a class="theButtons">Fortryd</a></button>
         </form>
     </div>
 </section>
 </body>
+
 <footer th:replace="fragments/footer.html"></footer>
+
 <!-- Bootstrap core JS-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
 <!-- Core theme JS-->
@@ -47,5 +48,6 @@
 <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
 <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+<script src="js/ButtonScript.js"></script>
 
 </html>
