@@ -48,4 +48,8 @@ public class ProductRepository {
                 product.getProductPrice(),
                 productID);
     }
+    public void deleteProduct(int productID) {
+        String sql = "DELETE FROM booking WHERE productID = ?";
+        template.update(sql, productID);
+    }
 }

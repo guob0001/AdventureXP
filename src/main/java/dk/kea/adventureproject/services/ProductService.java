@@ -36,4 +36,7 @@ public class ProductService {
     public void updateProduct(int productID, Product product){
         productRepository.updateProduct(productID, product);
     }
+    public void deleteProduct(int productID){
+        productRepository.deleteProduct(productID);
+    }
 }
