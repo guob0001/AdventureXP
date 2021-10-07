@@ -23,10 +23,12 @@ public class ProductService {
     /**
      * @author Joachim og Christian
      */
-
+    /*
     public void createProduct(Product product) {
         productRepository.createProduct(product);
     }
+
+     */
 
     public List<Product> fetchAll(){
         return productRepository.fetchAll();
@@ -36,7 +38,10 @@ public class ProductService {
     public void updateProduct(int productID, Product product){
         productRepository.updateProduct(productID, product);
     }
+
     public void deleteProduct(int productID){
         productRepository.deleteProduct(productID);
     }
+
+
 }

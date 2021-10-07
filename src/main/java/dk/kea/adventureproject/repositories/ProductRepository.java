@@ -2,10 +2,6 @@ package dk.kea.adventureproject.repositories;
 
 import dk.kea.adventureproject.models.Product;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.JdbcTemplate;
-
-import dk.kea.adventureproject.models.Product;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
@@ -14,25 +10,13 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 /**
- * @author Joachim & Christian
+ * @author Julius Panduro
  */
 @Repository
 public class ProductRepository {
-
     @Autowired
     JdbcTemplate template;
-
-    /**
-     * @author Joachim og Christian
-     */
-
-    public void createProduct(Product product) {
-        String sql = "INSERT INTO products (productID, productName, productPrice) VALUES (?, ?, ?)";
-        template.update(sql,
-                product.getProductID(),
-                product.getProductName(),
-                product.getProductPrice());
-    }
+    //Template for ProductRepository
 
     public List<Product> fetchAll(){
         String sql = "SELECT * FROM products";
@@ -48,8 +32,14 @@ public class ProductRepository {
                 product.getProductPrice(),
                 productID);
     }
-    public void deleteProduct(int productID) {
-        String sql = "DELETE FROM booking WHERE productID = ?";
+
+
+
+    //Alexander
+    public void deleteProduct(int productID){
+        String sql = "delete from products where productID = ?";
         template.update(sql, productID);
     }
+
+
 }
