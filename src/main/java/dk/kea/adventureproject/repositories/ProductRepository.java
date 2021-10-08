@@ -1,5 +1,6 @@
 package dk.kea.adventureproject.repositories;
 
+import dk.kea.adventureproject.models.Activity;
 import dk.kea.adventureproject.models.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
@@ -22,6 +23,21 @@ public class ProductRepository {
         String sql = "SELECT * FROM products";
         RowMapper<Product> rowMapper = new BeanPropertyRowMapper<>(Product.class);
         return template.query(sql, rowMapper);
+    }
+
+    public Product readProductById(int id){
+        String sql = "SELECT * FROM products where productID = ?";
+        RowMapper<Product> rowMapper = new BeanPropertyRowMapper<>(Product.class);
+        return template.queryForObject(sql, rowMapper, id);
+
+    }
+
+    public void createProduct(Product product) {
+        String sql = "INSERT INTO products (productID, productName, productPrice) VALUES (?, ?, ?)";
+        template.update(sql,
+                product.getProductID(),
+                product.getProductName(),
+                product.getProductPrice());
     }
 
     //Frederik

@@ -23,15 +23,19 @@ public class ProductService {
     /**
      * @author Joachim og Christian
      */
-    /*
+
     public void createProduct(Product product) {
         productRepository.createProduct(product);
     }
 
-     */
+
 
     public List<Product> fetchAll(){
         return productRepository.fetchAll();
+    }
+
+    public Product readProductById(int id){
+        return productRepository.readProductById(id);
     }
 
     //Frederik
